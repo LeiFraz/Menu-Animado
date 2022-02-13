@@ -1,0 +1,133 @@
+html {
+	scroll-behavior: smooth;
+	/*para tener una transicion de scroll, cuando se selecciona una seccion*/
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #c7b8b8;
+	font-family: 'Roboto', sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 80px);
+	/*esta altura es para decirle:
+	 - quiero que tenga una altura del 100% del viewport hight (alto del dispositivo)
+	 - esos 80px que se le restan son de la altura de la etiqueta NAV*/
+}
+
+.hero h1 {
+	font-size: 80px;
+}
+
+.hero p {
+	font-size: 30px;
+	text-transform: uppercase;
+	color: #4b5ba1;
+}
+
+nav {
+	background: rgb(170, 129, 129);
+	height: 80px;
+	box-shadow: rgba(192, 40, 40, 0.253) 0px 8px 24px;
+	display: flex; /*todos los elementos uno a lado del otro*/
+	position: sticky; /*el menu queda pegado a donde se le indique*/
+	top: 0; /*le digo que top quede en 0, al tener la propiedad en sticky, el nav queda en esa posicion*/
+	overflow: hidden; /*todo lo que esta fuera del NAV, se oculta... evitando que aparezca una barra
+	de despliegue horizontal*/
+}
+
+nav a {
+	flex: 1; /*todos los enlaces tienen el mismo tamaño*/
+	height: 100%;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #000;
+	transition: .2s ease-in-out all;
+	font-weight: 500;
+}
+
+nav a:hover {
+	background: #be5757;
+}
+
+nav .indicador {
+	width: 0px; /*es 0 para poder calcularlo con .JS, cada dispositivo va a tener su tamaño*/
+	height: 7px;
+	background: #4b5ba1;
+	position: absolute;
+	bottom: 0;
+	transition: .3s ease-out all;
+	/* transform: translate(-500px); */
+}
+
+.seccion {
+	min-height: 100vh;
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+
+	padding-top: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.seccion .card {
+	background: #fff;
+	height: 90%;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.seccion h1 {
+	font-size: 48px;
+	margin-bottom: 20px;
+}
+
+.seccion p {
+	line-height: 38px;
+	margin-bottom: 40px;
+	color: #494949;
+	font-size: 20px;
+}
+
+.seccion img {
+	width: 100%;
+	vertical-align: top;
+	margin-bottom: 20px;
+}
+
+
+
+@media screen and (max-width: 800px) {
+	nav a {
+		font-size: 14px;
+		padding: 5px;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	nav a {
+		font-size: 12px;
+	}
+}
